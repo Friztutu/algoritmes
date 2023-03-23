@@ -5,11 +5,11 @@ from search_algoritmes.exceptions import *
 
 class SearchesTests(TestCase):
 
-    def binary_search_tests(self):
+    def test_binary_search(self):
         self.assertEqual(Searches.binary_search([1, 2, 3, 4, 5, 6, 7, 8], 3), 2)
-        self.assertEqual(Searches.binary_search([1, 2, 3, 4, 5, 6, 7, 8], 1), 2)
-        self.assertEqual(Searches.binary_search([1, 2, 3, 4, 5, 6, 7, 8], 8), 2)
-        self.assertRaises(SearchesIncorrectType, Searches.binary_search(), {1, 2, 3, 4, 5, 6, 7, 8}, 8)
-        self.assertRaises(SearchesIncorrectType, Searches.binary_search(), [1, '2', 3, 4, 5, 6, 7, 8], 8)
-        self.assertRaises(SearchesUnsortedList, Searches.binary_search(), [1, 2, 3, 5, 4, 6, 7, 8], 8)
+        self.assertEqual(Searches.binary_search([1, 2, 3, 4, 5, 6, 7, 8], 1), 0)
+        self.assertEqual(Searches.binary_search([1, 2, 3, 4, 5, 6, 7, 8], 8), 7)
+        self.assertRaises(TypeError, Searches.binary_search, {1, 2, 3, 4, 5, 6, 7, 8}, 8)
+        self.assertRaises(TypeError, Searches.binary_search, [1, '2', 3, 4, 5, 6, 7, 8], 8)
+        self.assertRaises(SearchesUnsortedList, Searches.binary_search, [1, 2, 3, 5, 4, 6, 7, 8], 8)
 

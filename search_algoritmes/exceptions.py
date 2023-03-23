@@ -1,4 +1,10 @@
-class SearchesExp(Exception):
+class SearchesIncorrectType(Exception):
+    pass
 
-    def __init__(self):
-        self.me
+
+class SearchesUnsortedList(Exception):
+    pass
+
+
+class SearchesEmptyList(Exception):
+    pass

@@ -43,4 +43,4 @@ class Searches:
                 return i
 
         return -1
-    
+

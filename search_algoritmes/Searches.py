@@ -24,9 +24,6 @@ class Searches:
 
     @staticmethod
     def __validator_binary_search(array: Iterable, target: int):
-        if not array:
-            raise ValueError('Был передан пустой список')
-
         if not isinstance(array, (list, tuple)):
             raise TypeError('Выполнить поиск элемента можно только в кортеже или списке')
 
@@ -38,3 +35,12 @@ class Searches:
 
         if not sorted(array) == array:
             raise SearchesUnsortedList('Нельзя передавать неотсортированные коллекции')
+
+    @classmethod
+    def linear_search(cls, array: Iterable, target):
+        for i, elem in enumerate(array):
+            if elem == target:
+                return i
+
+        return -1
+    
